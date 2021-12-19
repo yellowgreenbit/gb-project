@@ -17,4 +17,3 @@ for key, n in enumerate(numbers):
         numbers[key], numbers[key - 1] = numbers[key - 1], n
 
 print(numbers)
-
