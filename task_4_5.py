@@ -9,8 +9,6 @@
 # Для хранения данных о наименовании и количестве единиц оргтехники, а также других данных,
 # можно использовать любую подходящую структуру (например, словарь).
 
-# 6. Продолжить работу над вторым заданием. Реализуйте механизм валидации вводимых пользователем данных.
-# Например, для указания количества принтеров, отправленных на склад, нельзя использовать строковый тип данных.
 class Storage:
     def __init__(self, name, square, address):
         self.name = name
@@ -73,27 +71,3 @@ s.add_item(sc.__dict__, 21)
 s.add_item(x.__dict__, 18)
 
 print(s.storage_items)
-
-
-def do_valid(val, type):
-    if type == 'str' and val.isalnum():
-        return val
-
-    if type == 'int' and val.isdigit():
-        return int(val)
-
-    return 'Ошибка формата данных'
-
-
-while True:
-    if input('Добавить товар на склад (n - нет, Enter - да) ?: ') == 'n':
-        break
-
-    name = do_valid(input('Введите название товара: '), 'str')
-    age = do_valid(input('Введите дату производства: '), 'int')
-
-    item = {
-        'name': name,
-        'age': age
-    }
-
